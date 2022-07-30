@@ -28,14 +28,8 @@ import './App.scss';
 //============ Error Pages =============*
 import PageNotFound from './pages/Error/404';
 
-//============ Fake Backend =============*
-import fakeBackend from './helpers/fakeBackend';
-
 //============ Auth Functions =============*
 import { isUserAuthenticated } from './helpers/authUtils';
-
-//============ Initialize FakeBackend =============*
-fakeBackend();
 
 //============ Components with Sidebar and topbar =============*
 function layoutWithSidebarAndHeader(WrappedComponent) {
@@ -48,8 +42,6 @@ function layoutWithSidebarAndHeader(WrappedComponent) {
     }
   };
 }
-
-
 
 class App extends Component {
 

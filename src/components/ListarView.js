@@ -4,7 +4,6 @@ import { Card, CardBody, Button, Alert } from 'reactstrap';
 import Loader from './Loader'
 import Tabla from './Tabla'
 import OpcionesCell from './OpcionesCell'
-import { Endpoint, PrivateHeaders } from "../config";
 import RegresarButton from './RegresarButton'
 
 class ListarView extends Component {
@@ -27,27 +26,7 @@ class ListarView extends Component {
     }
 
     getData() {
-        this.setState(() => ({ loading: true }));
-        fetch(Endpoint(this.props.url), {
-            method: 'GET',
-            headers: PrivateHeaders()
-        }).then(response => {
-            if (response.status === 401) {
-                this.props.history.push('/logout');
-                throw Error("Debes iniciar sesión para poder accesar a este recurso");
-            }
-            return response.json();
-        }).then(response => {
-            if (response.error) {
-                throw Error(response.error);
-            }
-            return response;
-        }).then(data => {
-            this.setState(() => ({ data, loading: false }));
-        }).catch(err => {
-            const errorMessage = err.message.includes('fetch') ? 'Revise su conexión a internet' : err.message;
-            this.setState(() => ({ loading: false, error: true, errorMessage }));
-        });
+        this.setState(() => ({ data: [], loading: false }));
     }
 
     render() {
