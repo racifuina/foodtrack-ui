@@ -1,0 +1,26 @@
+/* ============================ */
+/*         Dropzone
+/* ============================ */
+
+.avatar-sm {
+  height: 3rem;
+  width: 3rem;
+}
+
+.dropzone {
+  min-height: 230px;
+  border: 2px dashed rgba(0, 0, 0, 0.3);
+  background: $white;
+  border-radius: 6px;
+
+  .dz-message {
+    font-size: 30px;
+  }
+}
+.dropzone_heading {
+  line-height: 220px;
+}
+
+/* ============================ */
+/*        End Dropzone
+/* ============================ */
