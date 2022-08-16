@@ -95,11 +95,6 @@ class Sidebar extends Component {
                                             }
                                             <ul className="submenu">
                                                 {
-                                                    ValidarPermiso(this.props.usuario, 'Gestion_Empleados', 1) && (
-                                                        <li><Link to="/empleados"><i className="feather ft-award"></i> <span>Empleados</span></Link></li>
-                                                    )
-                                                }
-                                                {
                                                     ValidarPermiso(this.props.usuario, 'Gestion_Usuarios', 1) && (
                                                         <li><Link to="/usuarios"><i className="feather ft-users"></i> <span>Usuarios</span></Link></li>
                                                     )
