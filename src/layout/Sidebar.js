@@ -75,61 +75,11 @@ class Sidebar extends Component {
                                 <nav>
                                     <ul className="metismenu" id="menu">
                                         {
-                                            ValidarPermiso(this.props.usuario, 'Gestion_Pedidos', 1) && (
-                                                <li>
-                                                    <Link to="/pedidos">
-                                                        <i className="feather ft-archive"></i>
-                                                        <span>Pedidos</span>
-                                                    </Link>
-                                                </li>
-                                            )
-                                        }
-                                        {
-                                            ValidarPermiso(this.props.usuario, 'Gestion_Cocina', 1) && (
-                                                <li>
-                                                    <Link to="/cocina">
-                                                        <i className="feather ft-heart"></i>
-                                                        <span>Cocina</span>
-                                                    </Link>
-                                                </li>
-                                            )
-                                        }
-                                        {
-                                            ValidarPermiso(this.props.usuario, 'Gestion_Mensajeria', 1) && (
-                                                <li>
-                                                    <Link to="/mensajeria">
-                                                        <i className="feather ft-map"></i>
-                                                        <span>Mensajería</span>
-                                                    </Link>
-                                                </li>
-                                            )
-                                        }
-                                        {
-                                            ValidarPermiso(this.props.usuario, 'Gestion_Clientes', 1) && (
-                                                <li>
-                                                    <Link to="/clientes">
-                                                        <i className="feather ft-users"></i>
-                                                        <span>Clientes</span>
-                                                    </Link>
-                                                </li>
-                                            )
-                                        }
-                                        {
                                             ValidarPermiso(this.props.usuario, 'Gestion_Productos', 1) && (
                                                 <li>
                                                     <Link to="/productos">
                                                         <i className="feather ft-grid"></i>
                                                         <span>Productos</span>
-                                                    </Link>
-                                                </li>
-                                            )
-                                        }
-                                        {
-                                            ValidarPermiso(this.props.usuario, 'Gestion_Facturas', 1) && (
-                                                <li>
-                                                    <Link to="/facturas">
-                                                        <i className="feather ft-dollar-sign"></i>
-                                                        <span>Facturas</span>
                                                     </Link>
                                                 </li>
                                             )
@@ -145,18 +95,8 @@ class Sidebar extends Component {
                                             }
                                             <ul className="submenu">
                                                 {
-                                                    ValidarPermiso(this.props.usuario, 'Gestion_Empleados', 1) && (
-                                                        <li><Link to="/empleados"><i className="feather ft-award"></i> <span>Empleados</span></Link></li>
-                                                    )
-                                                }
-                                                {
                                                     ValidarPermiso(this.props.usuario, 'Gestion_Usuarios', 1) && (
                                                         <li><Link to="/usuarios"><i className="feather ft-users"></i> <span>Usuarios</span></Link></li>
-                                                    )
-                                                }
-                                                {
-                                                    ValidarPermiso(this.props.usuario, 'Gestion_Roles', 1) && (
-                                                        <li><Link to="/roles"><i className="feather ft-shield"></i> <span>Roles</span></Link></li>
                                                     )
                                                 }
                                             </ul>
