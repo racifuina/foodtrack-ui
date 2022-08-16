@@ -25,7 +25,6 @@
     "axios-mock-adapter": "^1.18.2",
     "bootstrap": "^4.5.0",
     "chart.js": "^2.9.3",
-    "chartist": "^0.11.4",
     "draft-js": "^0.11.7",
     "echarts": "^4.9.0",
     "echarts-for-react": "^2.0.16",
