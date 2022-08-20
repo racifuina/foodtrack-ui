@@ -38,6 +38,7 @@ class Pageslogin extends Component {
                                     })}
                                     onSubmit={values => {
                                         this.setState(() => ({ blocking: true }));
+                                        console.log('endpoint', Endpoint('/usuarios/autenticar'))
                                         fetch(Endpoint('/usuarios/autenticar'), {
                                             method: 'POST',
                                             body: JSON.stringify(values),
