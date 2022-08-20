@@ -6,6 +6,10 @@ name: Deploy to Firebase Hosting on merge
   push:
     branches:
       - main
+env:
+  REACT_APP_API_SERVER_ENDPOINT_BASE: '${{ secrets.REACT_APP_API_SERVER_ENDPOINT_BASE }}'
+  REACT_APP_AUTH_TOKEN_KEY_NAME: '${{ secrets.REACT_APP_AUTH_TOKEN_KEY_NAME }}'
+  REACT_APP_REDUX_STORE_NAME: '${{ secrets.REACT_APP_REDUX_STORE_NAME }}'
 jobs:
   build_and_deploy:
     runs-on: ubuntu-latest
@@ -18,10 +22,3 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FOODTRACK_UI }}'
           channelId: live
           projectId: foodtrack-ui
-          REACT_APP_API_SERVER_ENDPOINT_BASE: '${{ secrets.REACT_APP_API_SERVER_ENDPOINT_BASE }}'
-          REACT_APP_AUTH_TOKEN_KEY_NAME: '${{ secrets.REACT_APP_AUTH_TOKEN_KEY_NAME }}'
-          REACT_APP_REDUX_STORE_NAME: '${{ secrets.REACT_APP_REDUX_STORE_NAME }}'
-        env:
-          REACT_APP_API_SERVER_ENDPOINT_BASE: '${{ secrets.REACT_APP_API_SERVER_ENDPOINT_BASE }}'
-          REACT_APP_AUTH_TOKEN_KEY_NAME: '${{ secrets.REACT_APP_AUTH_TOKEN_KEY_NAME }}'
-          REACT_APP_REDUX_STORE_NAME: '${{ secrets.REACT_APP_REDUX_STORE_NAME }}'
