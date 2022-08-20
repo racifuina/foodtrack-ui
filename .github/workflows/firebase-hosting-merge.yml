@@ -11,10 +11,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - env:
-            REACT_APP_API_SERVER_ENDPOINT_BASE: ${{ secrets.REACT_APP_API_SERVER_ENDPOINT_BASE }}
-            REACT_APP_AUTH_TOKEN_KEY_NAME: ${{ secrets.REACT_APP_AUTH_TOKEN_KEY_NAME }}
-            REACT_APP_REDUX_STORE_NAME: ${{ secrets.REACT_APP_REDUX_STORE_NAME }}
       - run: npm ci && npm run build
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
@@ -22,3 +18,7 @@ jobs:
           firebaseServiceAccount: '${{ secrets.FIREBASE_SERVICE_ACCOUNT_FOODTRACK_UI }}'
           channelId: live
           projectId: foodtrack-ui
+        env:
+          REACT_APP_API_SERVER_ENDPOINT_BASE: ${{ secrets.REACT_APP_API_SERVER_ENDPOINT_BASE }}
+          REACT_APP_AUTH_TOKEN_KEY_NAME: ${{ secrets.REACT_APP_AUTH_TOKEN_KEY_NAME }}
+          REACT_APP_REDUX_STORE_NAME: ${{ secrets.REACT_APP_REDUX_STORE_NAME }}
