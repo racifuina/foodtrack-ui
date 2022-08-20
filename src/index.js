@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import Store from './store';
 import { REDUX_STORE_NAME } from './config';
 
+
 const loadState = () => {
     try {
         const serializedState = localStorage.getItem(REDUX_STORE_NAME);
